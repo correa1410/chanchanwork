@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <header>
+        <h1>
+            ChanChanWork
+        </h1>
+    </header>
+    <h1>¡Bienvenido a ChanChanWork!</h1>
+    <h2>
+        Registre su ID y Password!!
+    </h2>
+    <form action="/chan_in" method="post">
+        <input type="text" name="chan_id" placeholder="ID" required>
+        <input type="password" name="chan_ps" placeholder="Password" required>
+        <button type="submit">registrar</button>
+    </form>
+</body>
+</html>

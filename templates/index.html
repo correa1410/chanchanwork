@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <header>
+        <h1>
+            ChanChanWork
+        </h1>
+    </header>
+    <h1>¡Bienvenido a tu lista de tareas!</h1>
+    <form action="/delete_selected_tasks" method="post">
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    <input type="checkbox" name="task_ids" value="{{ task[0] }}">
+                    <label>{{ task[1] }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Eliminar</button>
+    </form>
+    <h2>Agregar Nueva Tarea</h2>
+    <form action="/add_task" method="post">
+        <input type="text" name="task_name" placeholder="Nombre de la tarea" required>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
